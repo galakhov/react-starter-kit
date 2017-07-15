@@ -16,9 +16,9 @@ import run from './run';
 // GitHub Pages
 const remote = {
   name: 'github',
-  url: 'https://github.com/<user>/<repo>.git',
-  branch: 'gh-pages',
-  website: 'https://<user>.github.io/<repo>/',
+  url: 'https://github.com/galakhov/react-starter-kit.git',
+  branch: 'feature/react-intl',
+  website: 'https://galakhov.github.io/react-starter-kit/',
   static: true,
 };
 
