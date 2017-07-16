@@ -10,6 +10,7 @@
 import React from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import sass from '../custom.scss';
 import s from './Header.css';
 import Link from '../Link';
 import Navigation from '../Navigation';
@@ -48,7 +49,7 @@ class Header extends React.Component {
             </span>
           </Link>
           <LanguageSwitcher />
-          <div className={s.banner}>
+          <div className={sass.banner}>
             <h1 className={s.bannerTitle}>
               <FormattedMessage {...messages.bannerTitle} />
             </h1>

@@ -12,6 +12,8 @@ import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 // external-global styles must be imported in your JS.
+// import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Row, Col } from 'react-bootstrap';
 import normalizeCss from 'normalize.css';
 import s from './Layout.css';
 import Header from '../Header';
@@ -26,6 +28,11 @@ class Layout extends React.Component {
   render() {
     return (
       <div>
+        <Row>
+          <Col md={6}>
+            <Button bsStyle="primary" bsSize="large">Submit</Button>
+          </Col>
+        </Row>
         <Header />
         {this.props.children}
         <Feedback />

@@ -150,7 +150,6 @@ const config = {
               discardComments: { removeAll: true },
             },
           },
-
           // Apply PostCSS plugins including autoprefixer
           {
             loader: 'postcss-loader',
@@ -160,7 +159,6 @@ const config = {
               },
             },
           },
-
           // Compile Less to CSS
           // https://github.com/webpack-contrib/less-loader
           // Install dependencies before uncommenting: yarn add --dev less-loader less
@@ -171,11 +169,24 @@ const config = {
 
           // Compile Sass to CSS
           // https://github.com/webpack-contrib/sass-loader
-          // Install dependencies before uncommenting: yarn add --dev sass-loader node-sass
-          // {
-          //   test: /\.scss$/,
-          //   loader: 'sass-loader',
-          // },
+          // Install dependencies before uncommenting:
+          // yarn add --dev sass-loader node-sass
+          // npm install sass-loader node-sass webpack --save-dev
+          {
+            test: /\.scss$/,
+            loader: ['sass-loader',
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  // Provide path to the file with resources
+                  resources: './src/components/**/*.scss',
+
+                  // Or array of paths
+                  // resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+                },
+              },
+            ],
+          },
         ],
       },
 
@@ -294,7 +305,7 @@ const clientConfig = {
   target: 'web',
 
   entry: {
-    client: ['babel-polyfill', './src/clientLoader.js'],
+    client: ['babel-polyfill', 'bootstrap-loader', './src/clientLoader.js'],
   },
 
   plugins: [

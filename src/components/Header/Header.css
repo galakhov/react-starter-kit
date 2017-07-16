@@ -6,7 +6,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
-
 @import '../variables.css';
 
 :root {
@@ -14,8 +13,13 @@
 }
 
 .root {
-  background: #373277;
+  background: #0f3f94;
   color: #fff;
+  height: 400px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.9;
 }
 
 .container {
@@ -32,10 +36,6 @@
 
 .brandTxt {
   margin-left: 10px;
-}
-
-.banner {
-  text-align: center;
 }
 
 .bannerTitle {
